@@ -10,7 +10,7 @@ terraform {
     organization = "sagya"
 
     workspaces {
-      name = "TestDB"
+      name = "DevOps"
     }
   }
 }
@@ -24,7 +24,7 @@ resource "snowflake_database" "DEVOPS" {
 }
 
 resource "snowflake_schema" "demo_schema" {
-  database = snowflake_database.TESTDB.name
+  database = snowflake_database.DEVOPS.name
   name     = "DEMO_SCHEMA"
   comment  = "Schema for Snowflake Terraform demo"
 }
