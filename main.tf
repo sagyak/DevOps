@@ -1,4 +1,4 @@
-terraform {
+pterraform {
   required_providers {
     snowflake = {
       source  = "chanzuckerberg/snowflake"
@@ -18,7 +18,13 @@ terraform {
 provider "snowflake" {
 }
 
-resource "snowflake_database" "demo_db" {
-  name    = "DEMO_DB"
+resource "snowflake_database" "devops_db" {
+  name    = "DEVOPS_DB"
+  comment = "Database for Snowflake Terraform demo"
+}
+
+resource "snowflake_schema" "devops_schema" {
+  database = snowflake_database.devops.name
+  name    = "DEVOPS_SCHEMA"
   comment = "Database for Snowflake Terraform demo"
 }
