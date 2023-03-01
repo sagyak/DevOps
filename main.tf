@@ -23,8 +23,3 @@ resource "snowflake_database" "devops_db" {
   comment = "Database for Snowflake Terraform demo"
 }
 
-resource "snowflake_schema" "devops_schema" {
-  database = snowflake_database.devops_db.name
-  name    = "DEVOPS_SCHEMA"
-  comment = "Schema for Snowflake Terraform demo"
-}
