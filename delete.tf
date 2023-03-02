@@ -18,4 +18,6 @@ terraform {
 provider "snowflake" {
 }
 
-destroy snowflake_database.devops_db.name
+destroy {
+  snowflake_database.devops_db.name
+}
